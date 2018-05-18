@@ -1,2 +1,2 @@
 # Opengl-iOS
-Opengl学习
+Opengl study

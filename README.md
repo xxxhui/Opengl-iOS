@@ -1,2 +1,2 @@
 # Opengl-iOS
-Opengl study
+Opengl studys

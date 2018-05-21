@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */; };
-		5468D9C220AEF9B2003EE7D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9C120AEF9B2003EE7D0 /* ViewController.m */; };
-		5468D9C520AEF9B2003EE7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C320AEF9B2003EE7D0 /* Main.storyboard */; };
 		5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */; };
-		5468D9CA20AEF9B4003EE7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C820AEF9B4003EE7D0 /* LaunchScreen.storyboard */; };
 		5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9CC20AEF9B4003EE7D0 /* main.m */; };
+		7BB39F5D20B301D8007F47C0 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F5C20B301D8007F47C0 /* MainNavigationController.m */; };
+		7BB39F6020B301F8007F47C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F5F20B301F8007F47C0 /* HomeViewController.m */; };
+		7BB39F6620B3257B007F47C0 /* TriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F6520B3257B007F47C0 /* TriangleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5468D9BA20AEF9B2003EE7D0 /* Opengl-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opengl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468D9BD20AEF9B2003EE7D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5468D9C020AEF9B2003EE7D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5468D9C120AEF9B2003EE7D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5468D9C420AEF9B2003EE7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5468D9C920AEF9B4003EE7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5468D9CB20AEF9B4003EE7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5468D9CC20AEF9B4003EE7D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BB39F5B20B301D8007F47C0 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		7BB39F5C20B301D8007F47C0 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		7BB39F5E20B301F8007F47C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7BB39F5F20B301F8007F47C0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7BB39F6420B3257B007F47C0 /* TriangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleViewController.h; sourceTree = "<group>"; };
+		7BB39F6520B3257B007F47C0 /* TriangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriangleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,13 @@
 			children = (
 				5468D9BD20AEF9B2003EE7D0 /* AppDelegate.h */,
 				5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */,
-				5468D9C020AEF9B2003EE7D0 /* ViewController.h */,
-				5468D9C120AEF9B2003EE7D0 /* ViewController.m */,
-				5468D9C320AEF9B2003EE7D0 /* Main.storyboard */,
+				7BB39F5B20B301D8007F47C0 /* MainNavigationController.h */,
+				7BB39F5C20B301D8007F47C0 /* MainNavigationController.m */,
+				7BB39F5E20B301F8007F47C0 /* HomeViewController.h */,
+				7BB39F5F20B301F8007F47C0 /* HomeViewController.m */,
+				7BB39F6420B3257B007F47C0 /* TriangleViewController.h */,
+				7BB39F6520B3257B007F47C0 /* TriangleViewController.m */,
 				5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */,
-				5468D9C820AEF9B4003EE7D0 /* LaunchScreen.storyboard */,
 				5468D9CB20AEF9B4003EE7D0 /* Info.plist */,
 				5468D9CC20AEF9B4003EE7D0 /* main.m */,
 			);
@@ -128,9 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5468D9CA20AEF9B4003EE7D0 /* LaunchScreen.storyboard in Resources */,
 				5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */,
-				5468D9C520AEF9B2003EE7D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,32 +143,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5468D9C220AEF9B2003EE7D0 /* ViewController.m in Sources */,
 				5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */,
+				7BB39F5D20B301D8007F47C0 /* MainNavigationController.m in Sources */,
+				7BB39F6020B301F8007F47C0 /* HomeViewController.m in Sources */,
+				7BB39F6620B3257B007F47C0 /* TriangleViewController.m in Sources */,
 				5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5468D9C320AEF9B2003EE7D0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468D9C420AEF9B2003EE7D0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5468D9C820AEF9B4003EE7D0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5468D9C920AEF9B4003EE7D0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5468D9CE20AEF9B4003EE7D0 /* Debug */ = {
@@ -283,8 +268,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Opengl-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,8 +286,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Opengl-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

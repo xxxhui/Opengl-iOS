@@ -10,6 +10,9 @@
 		5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */; };
 		5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */; };
 		5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9CC20AEF9B4003EE7D0 /* main.m */; };
+		7B8FCDDA20B4FD04005E3DD7 /* FirstVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7B8FCDD820B4FD04005E3DD7 /* FirstVertex.glsl */; };
+		7B8FCDDB20B4FD04005E3DD7 /* FirstFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7B8FCDD920B4FD04005E3DD7 /* FirstFragment.glsl */; };
+		7B8FCDE320B507B1005E3DD7 /* GLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8FCDE220B507B1005E3DD7 /* GLUtils.m */; };
 		7BB39F5D20B301D8007F47C0 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F5C20B301D8007F47C0 /* MainNavigationController.m */; };
 		7BB39F6020B301F8007F47C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F5F20B301F8007F47C0 /* HomeViewController.m */; };
 		7BB39F6620B3257B007F47C0 /* TriangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB39F6520B3257B007F47C0 /* TriangleViewController.m */; };
@@ -22,6 +25,10 @@
 		5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5468D9CB20AEF9B4003EE7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5468D9CC20AEF9B4003EE7D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B8FCDD820B4FD04005E3DD7 /* FirstVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstVertex.glsl; sourceTree = "<group>"; };
+		7B8FCDD920B4FD04005E3DD7 /* FirstFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstFragment.glsl; sourceTree = "<group>"; };
+		7B8FCDE120B507B1005E3DD7 /* GLUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLUtils.h; sourceTree = "<group>"; };
+		7B8FCDE220B507B1005E3DD7 /* GLUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLUtils.m; sourceTree = "<group>"; };
 		7BB39F5B20B301D8007F47C0 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		7BB39F5C20B301D8007F47C0 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		7BB39F5E20B301F8007F47C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -60,6 +67,8 @@
 		5468D9BC20AEF9B2003EE7D0 /* Opengl-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B8FCDDC20B50699005E3DD7 /* GLUtil */,
+				7B8FCDD720B4FC9E005E3DD7 /* Shaders */,
 				5468D9BD20AEF9B2003EE7D0 /* AppDelegate.h */,
 				5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */,
 				7BB39F5B20B301D8007F47C0 /* MainNavigationController.h */,
@@ -74,6 +83,25 @@
 			);
 			path = "Opengl-iOS";
 			sourceTree = "<group>";
+		};
+		7B8FCDD720B4FC9E005E3DD7 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				7B8FCDD820B4FD04005E3DD7 /* FirstVertex.glsl */,
+				7B8FCDD920B4FD04005E3DD7 /* FirstFragment.glsl */,
+			);
+			path = Shaders;
+			sourceTree = SOURCE_ROOT;
+		};
+		7B8FCDDC20B50699005E3DD7 /* GLUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7B8FCDE120B507B1005E3DD7 /* GLUtils.h */,
+				7B8FCDE220B507B1005E3DD7 /* GLUtils.m */,
+			);
+			name = GLUtil;
+			path = "Opengl-iOS/GLUtil";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -132,7 +160,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8FCDDB20B4FD04005E3DD7 /* FirstFragment.glsl in Resources */,
 				5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */,
+				7B8FCDDA20B4FD04005E3DD7 /* FirstVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */,
+				7B8FCDE320B507B1005E3DD7 /* GLUtils.m in Sources */,
 				7BB39F5D20B301D8007F47C0 /* MainNavigationController.m in Sources */,
 				7BB39F6020B301F8007F47C0 /* HomeViewController.m in Sources */,
 				7BB39F6620B3257B007F47C0 /* TriangleViewController.m in Sources */,

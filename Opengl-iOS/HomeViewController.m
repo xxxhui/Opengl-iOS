@@ -27,6 +27,7 @@
     tabView.delegate = self;
     tabView.dataSource = self;
     [self.view addSubview:tabView];
+    
     // Do any additional setup after loading the view.
 }
 

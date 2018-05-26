@@ -107,6 +107,9 @@
     
     glDrawArrays(GL_TRIANGLES, 0, 3);
     
+    glDisableVertexAttribArray(_vertexPos);
+    glDisableVertexAttribArray(_colorPos);
+    
 }
 
 -(void)initDisplayRenderBuffer{
@@ -122,7 +125,7 @@
     [_eglContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eglLayer];
     
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_frameBufferWidth);
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_frameBufferHeight);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_frameBufferHeight);
     
     // 检测是否成功
     if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {

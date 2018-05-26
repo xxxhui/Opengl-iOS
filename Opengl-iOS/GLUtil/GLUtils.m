@@ -90,6 +90,18 @@
         }
         return 0;
     }
+    
+    //释放资源
+    if(vertexShader) {
+        glDetachShader(programObject, vertexShader);
+        glDeleteShader(vertexShader);
+    }
+    
+    if(fragmentShader) {
+        glDetachShader(programObject, fragmentShader);
+        glDeleteShader(fragmentShader);
+    }
+    
     return programObject;
 }
 @end

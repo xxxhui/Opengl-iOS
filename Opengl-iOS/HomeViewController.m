@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #include "TriangleViewController.h"
+#include "RegularTriangleViewController.h"
+#include "OpenGLES_Ch3_6ViewController.h"
 
 @interface HomeViewController ()
 @property (strong, nonatomic) NSMutableArray* list;
@@ -16,7 +18,12 @@
 @implementation HomeViewController
 
 - (void)loadData {
-    self.list = [[NSMutableArray alloc] initWithObjects:@"三角形", @"正方形", nil];
+    self.list = [[NSMutableArray alloc] initWithObjects:
+                 @"三角形",
+                 @"正方形",
+                 @"正三角形",
+                 @"简单粒子特效",
+                 nil];
 }
 
 - (void)viewDidLoad {
@@ -69,9 +76,15 @@
 {
     NSUInteger row = [indexPath row];
     NSString *rowString = [self.list objectAtIndex:row];
-    if([rowString isEqual:@"三角形"]) {
+    if([rowString isEqualToString:@"三角形"]) {
         TriangleViewController* triangle = [[TriangleViewController alloc] init];
         [self.navigationController pushViewController:triangle animated:true];
+    }else if([rowString isEqualToString:@"正三角形"]) {
+        RegularTriangleViewController* regularTriangle = [[RegularTriangleViewController alloc] init];
+        [self.navigationController pushViewController:regularTriangle animated:true];
+    }else {
+        OpenGLES_Ch3_6ViewController* regularTriangle = [[OpenGLES_Ch3_6ViewController alloc] init];
+        [self.navigationController pushViewController:regularTriangle animated:true];
     }
 }
 

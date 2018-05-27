@@ -2,6 +2,8 @@
 //  TriangleViewController.m
 //  Opengl-iOS
 //
+//  画一个最简单的三角形。开启OpenGL的 Hello World !
+//
 //  Created by xxxhui on 2018/5/22.
 //  Copyright © 2018年 No Name. All rights reserved.
 //
@@ -10,20 +12,19 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 #import "GLUtils.h"
-
-//画一个最简单的三角形
+#import <GLKit/GLKit.h>
 
 @interface TriangleViewController () {
-    EAGLContext* _eglContext;
-    CAEAGLLayer* _eglLayer;
-    GLuint _eglProgram;
-    GLuint _colorBufferRender; // RBO，渲染颜色缓冲区，后面可能用到深度缓冲区
-    GLuint _frameBuffer;       // FBO
-    GLuint _vertexPos;      // 用于绑定shader中的Position参数
-    GLuint _colorPos;       // 用于绑定shader中的SourceColor参数
-    GLint _frameBufferWidth; // 画布宽度
-    GLint _frameBufferHeight; // 画布高度
-
+    EAGLContext* _eglContext;       // 绘制上下文
+    CAEAGLLayer* _eglLayer;         // ios提供的绘制层
+    GLuint _eglProgram;             // glProgrom的id
+    GLuint _colorBufferRender;      // RBO，渲染颜色缓冲区，后面可能用到深度缓冲区
+    GLuint _frameBuffer;            // FBO
+    GLuint _vertexPos;              // 用于绑定shader中的Position参数
+    GLuint _colorPos;               // 用于绑定shader中的SourceColor参数
+    GLint _frameBufferWidth;        // 画布宽度
+    GLint _frameBufferHeight;       // 画布高度
+    //GLint _mvp;                   // 变换矩阵
 }
 
 @end
@@ -41,24 +42,12 @@
     //stup4:绑定program
     [self initProgram];
     //stup4:绘制图形
-    [self glClear];
     [self draw];
     //stup5:swap缓冲区,数据刷新
     [self flush];
     //释放资源
     [self releaseRes];
     
-
-//    UIView* contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    contentView.backgroundColor = [UIColor redColor];
-//    self.view = contentView;
-//    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    btn.titleLabel.font=[UIFont systemFontOfSize:12];
-//    [btn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
-//    [btn setTitle:@"返回" forState:UIControlStateNormal];
-//    btn.backgroundColor = [UIColor whiteColor];
-//    [btn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
 }
 
 
@@ -83,11 +72,17 @@
 }
 
 -(void)draw{
+    //设置背景色
+    [self glClearBackground];
+    
+    //设置视口
+    glViewport(0, 0, _frameBufferWidth, _frameBufferHeight);
+    
     //设置三角形顶点位置
     GLfloat vertex[] = {
-        -0.5,   -0.5,   0,
-        0,      0.5,    0,
-        0.5,    -0.5,   0
+        -0.5f,   -0.5f,   0.0f,
+        0.0f,     0.5f,   0.0f,
+        0.5f,    -0.5f,   0.0f
     };
     
     //设置顶点颜色数据
@@ -97,7 +92,7 @@
         1.0f, 0.0f, 0.0f, 1.0f,
     };
     
-    //启动顶点属性
+    //启用顶点属性
     glEnableVertexAttribArray(_vertexPos);
     glVertexAttribPointer(_vertexPos, 3, GL_FLOAT, GL_FALSE, 0, vertex);
     
@@ -105,39 +100,53 @@
     glEnableVertexAttribArray(_colorPos);
     glVertexAttribPointer(_colorPos, 4, GL_FLOAT, GL_FALSE, 0, color);
     
+    //设置正交投影
+//    float ratio = fabsf((float)self.view.bounds.size.height / (float)self.view.bounds.size.width);
+//    GLKMatrix4 mvpMat4 = GLKMatrix4MakeOrtho(-1, 1, -ratio, ratio, -1.0f, 1.0f);
+//    glUniformMatrix4fv(_mvp, 1, 0, mvpMat4.m);
+    
+    
+    //启动绘制
     glDrawArrays(GL_TRIANGLES, 0, 3);
     
+    //取消属性启用
     glDisableVertexAttribArray(_vertexPos);
     glDisableVertexAttribArray(_colorPos);
-    
+
 }
 
 -(void)initDisplayRenderBuffer{
     
+    //创建FBO
     glGenFramebuffers(1, &_frameBuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, _frameBuffer);
     
+    //创建RBO缓存
     glGenRenderbuffers(1, &_colorBufferRender);
     glBindRenderbuffer(GL_RENDERBUFFER, _colorBufferRender);
+    
+    //绑定缓存
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _colorBufferRender);
     
-    
+    //绑定Context
     [_eglContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eglLayer];
     
+    //获取画布大小
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_frameBufferWidth);
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_frameBufferHeight);
     
     // 检测是否成功
     if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-        NSLog(@"Faild  %i", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+        NSLog(@"创建缓存失败  %i", glCheckFramebufferStatus(GL_FRAMEBUFFER));
     }
 }
 
 -(void)initProgram {
-    _eglProgram = [GLUtils createProgramWithVertexShader:@"FirstVertex" fragmentShader:@"FirstFragment"];
+    _eglProgram = [GLUtils createProgramWithVertexShader:@"Triangle" fragmentShader:@"Triangle"];
     glUseProgram(_eglProgram);
     _vertexPos = glGetAttribLocation(_eglProgram, "position");
     _colorPos = glGetAttribLocation(_eglProgram, "color");
+//    _mvp = glGetUniformLocation(_eglProgram, "mvp");
 }
 
 -(void)initEglDisplay {
@@ -150,12 +159,10 @@
     
 }
 
--(void)glClear{
+-(void)glClearBackground{
     //清屏
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    //设置视口
-    glViewport(0, 0, _frameBufferWidth, _frameBufferHeight);
 }
 
 -(void)initEglContext {
@@ -163,25 +170,9 @@
     [EAGLContext setCurrentContext:_eglContext];
 }
 
--(void)back:(UIButton*) button {
-    NSLog(@"%@",button);
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

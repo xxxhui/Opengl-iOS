@@ -8,14 +8,12 @@
 
 #import "GLUtils.h"
 @interface GLUtils()
-+ (GLuint)loadShader:(NSString*)shaderName withType:(GLenum)shaderType;
++ (GLuint)loadShader:(NSString*)shaderPath withType:(GLenum)shaderType;
 @end
 
 @implementation GLUtils
-+ (GLuint)loadShader:(NSString*)shaderName withType:(GLenum)shaderType {
++ (GLuint)loadShader:(NSString*)shaderPath withType:(GLenum)shaderType {
     
-    //根据文件名找到资源路径，读取成字符串，比Android方便
-    NSString* shaderPath = [[NSBundle mainBundle] pathForResource:shaderName ofType:@"glsl"];
     NSError* error;
     NSString* shaderString = [NSString stringWithContentsOfFile:shaderPath encoding:NSUTF8StringEncoding error:&error];
     if(!shaderString) {
@@ -61,10 +59,13 @@
     GLuint vertexShader;
     GLuint fragmentShader;
     GLuint programObject;
+    //根据文件名找到资源路径，读取成字符串，比Android方便
+    NSString* vertexShaderPath = [[NSBundle mainBundle] pathForResource:vertexShaderName ofType:@"vsh"];
+    NSString* fragmentShaderPath = [[NSBundle mainBundle] pathForResource:vertexShaderName ofType:@"fsh"];
     
     //加载shader
-    vertexShader = [self loadShader:vertexShaderName withType:GL_VERTEX_SHADER];
-    fragmentShader = [self loadShader:fragmentShaderName withType:GL_FRAGMENT_SHADER];
+    vertexShader = [self loadShader:vertexShaderPath withType:GL_VERTEX_SHADER];
+    fragmentShader = [self loadShader:fragmentShaderPath withType:GL_FRAGMENT_SHADER];
     
     programObject = glCreateProgram();
     

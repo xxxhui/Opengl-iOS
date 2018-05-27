@@ -7,9 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#include "TriangleViewController.h"
-#include "RegularTriangleViewController.h"
-#include "OpenGLES_Ch3_6ViewController.h"
+#import "TriangleViewController.h"
+#import "SquareViewController.h"
+#import "RegularTriangleViewController.h"
+#import "OpenGLES_Ch3_6ViewController.h"
 
 @interface HomeViewController ()
 

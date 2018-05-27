@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42F8592920BAA4A00047D370 /* SquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8592820BAA4A00047D370 /* SquareViewController.m */; };
+		42F8592C20BAA7620047D370 /* Square.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 42F8592A20BAA7620047D370 /* Square.fsh */; };
+		42F8592D20BAA7620047D370 /* Square.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 42F8592B20BAA7620047D370 /* Square.vsh */; };
 		5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */; };
 		5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */; };
 		5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9CC20AEF9B4003EE7D0 /* main.m */; };
@@ -48,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42F8592720BAA4A00047D370 /* SquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareViewController.h; sourceTree = "<group>"; };
+		42F8592820BAA4A00047D370 /* SquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareViewController.m; sourceTree = "<group>"; };
+		42F8592A20BAA7620047D370 /* Square.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Square.fsh; sourceTree = "<group>"; };
+		42F8592B20BAA7620047D370 /* Square.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Square.vsh; sourceTree = "<group>"; };
 		5468D9BA20AEF9B2003EE7D0 /* Opengl-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opengl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468D9BD20AEF9B2003EE7D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -159,6 +166,8 @@
 				7BB39F5F20B301F8007F47C0 /* HomeViewController.m */,
 				7BB39F6420B3257B007F47C0 /* TriangleViewController.h */,
 				7BB39F6520B3257B007F47C0 /* TriangleViewController.m */,
+				42F8592720BAA4A00047D370 /* SquareViewController.h */,
+				42F8592820BAA4A00047D370 /* SquareViewController.m */,
 				7BEA342220B997040096DA82 /* RegularTriangleViewController.h */,
 				7BEA342320B997040096DA82 /* RegularTriangleViewController.m */,
 				5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */,
@@ -173,6 +182,8 @@
 			children = (
 				7B8FCDD820B4FD04005E3DD7 /* Triangle.vsh */,
 				7B8FCDD920B4FD04005E3DD7 /* Triangle.fsh */,
+				42F8592A20BAA7620047D370 /* Square.fsh */,
+				42F8592B20BAA7620047D370 /* Square.vsh */,
 				7BEA346A20B9C8280096DA82 /* RegularTriangle.vsh */,
 				7BEA346720B9C77C0096DA82 /* RegularTriangle.fsh */,
 			);
@@ -330,11 +341,13 @@
 				7BEA344F20B9A9DF0096DA82 /* AGLKSkyboxShader.fsh in Resources */,
 				7BEA346B20B9C8280096DA82 /* RegularTriangle.vsh in Resources */,
 				7BEA346820B9C77C0096DA82 /* RegularTriangle.fsh in Resources */,
+				42F8592C20BAA7620047D370 /* Square.fsh in Resources */,
 				7BEA345C20B9B02A0096DA82 /* leaves.gif in Resources */,
 				7BEA346320B9C68E0096DA82 /* Shader.vsh in Resources */,
 				7BEA345120B9A9DF0096DA82 /* AGLKTextureMatrix2PointLightShader.fsh in Resources */,
 				7BEA344D20B9A9DF0096DA82 /* AGLKPointParticleShader.fsh in Resources */,
 				7B8FCDDA20B4FD04005E3DD7 /* Triangle.vsh in Resources */,
+				42F8592D20BAA7620047D370 /* Square.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +378,7 @@
 				7BEA344720B9A9DF0096DA82 /* AGLKFrustum.m in Sources */,
 				7BEA345420B9A9DF0096DA82 /* AGLKFilters.m in Sources */,
 				7BEA344420B9A9DF0096DA82 /* AGLKView.m in Sources */,
+				42F8592920BAA4A00047D370 /* SquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

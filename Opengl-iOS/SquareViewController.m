@@ -127,7 +127,7 @@
 }
 
 - (void)initProgram {
-    _eglProgram = [GLUtils createProgramWithVertexShader:@"FirstVertex" fragmentShader:@"FirstFragment"];
+    _eglProgram = [GLUtils createProgramWithVertexShader:@"Square" fragmentShader:@"Square"];
     glUseProgram(_eglProgram);
     _vertexPos = glGetAttribLocation(_eglProgram, "position");
     _colorPos = glGetAttribLocation(_eglProgram, "color");

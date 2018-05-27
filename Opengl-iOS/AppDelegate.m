@@ -23,12 +23,10 @@
     return YES;
 }
 
--(void)setupUI
-{
+-(void)setupUI {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     HomeViewController* home = [[HomeViewController alloc] init];
     MainNavigationController* nc = [[MainNavigationController alloc] initWithRootViewController:home];
-    nc.navigationBarHidden = YES;
     [self.window setRootViewController:nc];
     [self.window makeKeyAndVisible];
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42F8592620BA56610047D370 /* SquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8592520BA56610047D370 /* SquareViewController.m */; };
 		5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */; };
 		5468D9C720AEF9B4003EE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */; };
 		5468D9CD20AEF9B4003EE7D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5468D9CC20AEF9B4003EE7D0 /* main.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42F8592420BA56610047D370 /* SquareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquareViewController.h; sourceTree = "<group>"; };
+		42F8592520BA56610047D370 /* SquareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquareViewController.m; sourceTree = "<group>"; };
 		5468D9BA20AEF9B2003EE7D0 /* Opengl-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opengl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468D9BD20AEF9B2003EE7D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5468D9BE20AEF9B2003EE7D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				7BB39F5F20B301F8007F47C0 /* HomeViewController.m */,
 				7BB39F6420B3257B007F47C0 /* TriangleViewController.h */,
 				7BB39F6520B3257B007F47C0 /* TriangleViewController.m */,
+				42F8592420BA56610047D370 /* SquareViewController.h */,
+				42F8592520BA56610047D370 /* SquareViewController.m */,
 				5468D9C620AEF9B4003EE7D0 /* Assets.xcassets */,
 				5468D9CB20AEF9B4003EE7D0 /* Info.plist */,
 				5468D9CC20AEF9B4003EE7D0 /* main.m */,
@@ -179,6 +184,7 @@
 				7BB39F6020B301F8007F47C0 /* HomeViewController.m in Sources */,
 				7BB39F6620B3257B007F47C0 /* TriangleViewController.m in Sources */,
 				5468D9BF20AEF9B2003EE7D0 /* AppDelegate.m in Sources */,
+				42F8592620BA56610047D370 /* SquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

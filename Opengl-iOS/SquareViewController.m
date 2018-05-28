@@ -77,11 +77,14 @@
 }
 
 - (void)draw {
+    CGFloat kwidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat kheight = [[UIScreen mainScreen] bounds].size.height;
+    CGFloat heightRatio = kwidth / kheight * 0.5;
     GLfloat vertex[] = {
-        -0.5f,  0.5f, 0.0f,
-        0.5f,  0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f
+        -0.5f,  heightRatio, 0.0f,
+        0.5f,  heightRatio, 0.0f,
+        0.5f, -heightRatio, 0.0f,
+        -0.5f, -heightRatio, 0.0f
     };
     
     //设置顶点颜色数据
